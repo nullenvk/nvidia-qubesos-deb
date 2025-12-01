@@ -1,3 +1,9 @@
+nvidia-graphics-drivers (550.163.01-4~bpo13+1) trixie-backports; urgency=medium
+
+  * Rebuild for trixie-backports.  (Closes: #1121469)
+
+ -- Andreas Beckmann <anbe@debian.org>  Mon, 01 Dec 2025 01:23:35 +0100
+
 nvidia-graphics-drivers (550.163.01-4) unstable; urgency=medium
 
   * Backport drm_fb_create_takes_format_info changes from 535.274.02 to fix
