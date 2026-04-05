@@ -29,3 +29,6 @@ conftest-verbose.patch
 use-kbuild-compiler.patch
 use-kbuild-flags.patch
 conftest-prefer-arch-headers.patch
+
+# Qubes OS specific
+550-vbios-file.patch
