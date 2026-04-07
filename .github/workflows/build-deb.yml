@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@v6
       - uses: jtdor/build-deb-action@v1
         with:
+          host-arch: amd64
           extra-build-deps: wget ca-certificates
           before-build-hook: |
             debian/rules get-orig-source
@@ -19,6 +20,18 @@ jobs:
             tar xvf *amd64.tar.gz -C amd64 --strip-components 1
             tar xvf *arm64.tar.gz -C arm64 --strip-components 1
           buildpackage-opts: -us -uc --build=binary
+      
+      - uses: jtdor/build-deb-action@v1
+        with:
+          host-arch: i386
+          extra-build-deps: wget ca-certificates
+          before-build-hook: |
+            debian/rules get-orig-source
+            mkdir amd64 arm64
+            tar xvf *amd64.tar.gz -C amd64 --strip-components 1
+            tar xvf *arm64.tar.gz -C arm64 --strip-components 1
+          buildpackage-opts: -us -uc --build=binary
+
       - uses: actions/upload-artifact@v7
         with:
           name: deb-output

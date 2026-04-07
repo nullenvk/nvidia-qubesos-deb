@@ -1,3 +1,9 @@
+nvidia-graphics-drivers (550.163.01-4~bpo13+1+qubes) UNRELEASED; urgency=medium
+
+  * Apply Qubes OS patches
+
+ -- nullenvk <nullenvk@protonmail.com>  Tue, 07 Apr 2026 16:15:41 +0200
+
 nvidia-graphics-drivers (550.163.01-4~bpo13+1) trixie-backports; urgency=medium
 
   * Rebuild for trixie-backports.  (Closes: #1121469)
