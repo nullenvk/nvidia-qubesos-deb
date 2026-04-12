@@ -20,6 +20,7 @@ jobs:
             tar xvf *amd64.tar.gz -C amd64 --strip-components 1
             tar xvf *arm64.tar.gz -C arm64 --strip-components 1
           buildpackage-opts: -us -uc --build=binary
+          artifacts-dir: debian/artifacts/amd64
       
       - uses: jtdor/build-deb-action@v1
         with:
@@ -31,8 +32,9 @@ jobs:
             tar xvf *amd64.tar.gz -C amd64 --strip-components 1
             tar xvf *arm64.tar.gz -C arm64 --strip-components 1
           buildpackage-opts: -us -uc --build=binary
+          artifacts-dir: debian/artifacts/i386
 
       - uses: actions/upload-artifact@v7
         with:
           name: deb-output
-          path: debian/artifacts/
+          path: debian/artifacts
